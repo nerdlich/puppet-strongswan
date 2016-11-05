@@ -13,7 +13,6 @@ class strongswan::service (
 ) inherits strongswan::env {
   service { 'strongswan':
     ensure     => $ensure,
-    provider   => 'upstart',
     name       => $service,
     enable     => $enable,
     hasstatus  => true,
