@@ -12,10 +12,9 @@ class strongswan::service (
   $enable  = $strongswan::env::service_enable,
 ) inherits strongswan::env {
   service { 'strongswan':
-    ensure     => $ensure,
-    name       => $service,
-    enable     => $enable,
-    hasstatus  => true,
-    hasrestart => true,
+    ensure  => $ensure,
+    enable  => $enable,
+    status  => '/usr/sbin/ipsec status',
+    restart => '/usr/sbin/ipsec restart',
   }
 }
